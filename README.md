@@ -1,6 +1,8 @@
-# Mais uma Todolist para minha lista (essa é a segunda que faço)
+# Todolist com Laravel 😁
 
 O foco desse projeto foi entender como o laravel faz algumas coisas, e por isso eu fiz esse projeto tão comum entre a galera.
+
+![as rotas desse projeto](.github\rotas.png)
 
 # O foco foi entender e aprender:
 
@@ -31,10 +33,10 @@ php artisan make:model Task -m -f
 php artisan make:request TaskRequest
 ```
 
-`make:request`: gera duas funções:
+`make:request`: gera um arquivo que tem duas funções:
 
 -   `authorize`: Onde eu posso colar regras de acesso.
--   `rules`: é onde se coloca a regra para a requisição para a rota.
+-   `rules`: É onde se coloca a regra para a requisição para a rota.
 
 ```php
 use Illuminate\Foundation\Http\FormRequest;
@@ -140,8 +142,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
       //um exemplo de como vc informa as rotas
-      $this->app->register(TaskRouteProvider::class);
-
+        $this->app->register(TaskRouteProvider::class);
+        // interface // reopository
+        $this->app->bind(ProductRepository::class, ProductEloquentRepository::class);
     }
 
     /**
