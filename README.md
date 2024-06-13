@@ -2,7 +2,7 @@
 
 O foco desse projeto foi entender como o laravel faz algumas coisas, e por isso eu fiz esse projeto tão comum entre a galera.
 
-![as rotas desse projeto](.github\rotas.png)
+![as rotas desse projeto](.github/rotas.png)
 
 # O foco foi entender e aprender:
 
