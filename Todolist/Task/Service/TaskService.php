@@ -29,13 +29,6 @@ class TaskService
 
   public function deleteTask(int $id)
   {
-
-    $existTask = $this->taskRepository->findById($id);
-
-    if (!$existTask) {
-      throw new \Exception('task não existe');
-    }
-
     return $this->taskRepository->deleteTask($id);
   }
 

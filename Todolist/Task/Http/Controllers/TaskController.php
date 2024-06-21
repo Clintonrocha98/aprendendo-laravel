@@ -17,7 +17,7 @@ class TaskController extends Controller
   {
     $all = $this->taskService->allTasks();
 
-    return view('welcome', compact('all'));
+    return view('todolist', compact('all'));
   }
   public function createTask(CreateTaskRequest $request)
   {

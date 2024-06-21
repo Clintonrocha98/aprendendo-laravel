@@ -10,10 +10,7 @@ class TaskRepository
 
   public function createTask(array $payload)
   {
-    return Task::create([
-      'title' => $payload['title'],
-      'body' => $payload['body'],
-    ]);
+    return Task::create($payload);
   }
   public function getAllTasks()
   {
@@ -23,17 +20,14 @@ class TaskRepository
   public function patchTask(int $id, array $filds)
   {
     $task = Task::findOrFail($id);
-   
+
     $task->update($filds);
   }
 
   public function deleteTask(int $id)
   {
-    return Task::where('id', $id)->delete();
+    return Task::findOrFail($id)->delete();
   }
 
-  public function findById(int $id)
-  {
-    return Task::where('id', $id)->first();
-  }
+
 }
